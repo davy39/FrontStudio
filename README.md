@@ -4,7 +4,8 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?logo=typescript&logoColor=white&style=for-the-badge)](https://www.typescriptlang.org)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-7.0+-646CFF?logo=vite&logoColor=white&style=for-the-badge)](https://vitejs.dev)
-
+[![Tailwind](https://img.shields.io/badge/Tailwind-4.0+-38B2AC?logo=tailwind-css&logoColor=white&style=for-the-badge)](https://tailwindcss.com/)
+[![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-3.0+-000?logo=shadcnui&logoColor=fff&style=for-the-badge)](https://ui.shadcn.com/)
 
 **FrontStudio** is a sophisticated, browser-based Integrated Development Environment (IDE) tailored for React development. It offers a VS Code-like experience directly in the browser, allowing developers to write, preview, manage dependencies, and share React projects instantly without any local setup.
 
@@ -46,7 +47,7 @@ Built on top of the powerful **Sandpack** ecosystem, FrontStudio provides a full
 FrontStudio relies on a robust stack of modern web technologies.
 
 ### Core Architecture
-*   [**React 18**](https://react.dev/) - The library for web and native user interfaces.
+*   [**React 19**](https://react.dev/) - The library for web and native user interfaces.
 *   [**TypeScript**](https://www.typescriptlang.org/) - Strongly typed JavaScript for scalable development.
 *   [**Vite**](https://vitejs.dev/) - Next Generation Frontend Tooling for fast builds.
 
