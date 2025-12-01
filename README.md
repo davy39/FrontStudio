@@ -1,9 +1,9 @@
 # ⚡ FrontStudio
-![alt text](https://img.shields.io/badge/demo-online-2ea44f.svg?style=for-the-badge&logo=github&logoColor=white)
-![License](https://img.shields.io/badge/license-%20%20GNU%20GPLv3%20-green?style=for-the-badge&logo=gnu)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?logo=typescript&logoColor=white&style=for-the-badge)
-![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white&style=for-the-badge)
-![Vite](https://img.shields.io/badge/Vite-5.0+-646CFF?logo=vite&logoColor=white&style=for-the-badge)
+[![alt text](https://img.shields.io/badge/demo-online-2ea44f.svg?style=for-the-badge&logo=github&logoColor=white)](https://davy39.github.io/FrontStudio)
+[![License](https://img.shields.io/badge/license-%20%20GNU%20GPLv3%20-green?style=for-the-badge&logo=gnu)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?logo=typescript&logoColor=white&style=for-the-badge)](https://www.typescriptlang.org)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-5.0+-646CFF?logo=vite&logoColor=white&style=for-the-badge)](https://vitejs.dev)
 
 
 **FrontStudio** is a sophisticated, browser-based Integrated Development Environment (IDE) tailored for React development. It offers a VS Code-like experience directly in the browser, allowing developers to write, preview, manage dependencies, and share React projects instantly without any local setup.
