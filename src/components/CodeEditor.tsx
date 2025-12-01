@@ -49,7 +49,7 @@ export function CodeEditor() {
   useEffect(() => {
     if (monaco) {
 
-   fetch('/node_modules/monaco-themes/themes/Sunburst.json').then((data) => data.json())
+   fetch('https://raw.githubusercontent.com/brijeshb42/monaco-themes/refs/heads/master/themes/Brilliance%20Dull.json').then((data) => data.json())
   .then((data) => {
     monaco.editor.defineTheme('dark', data);
       monaco.editor.setTheme(resolvedTheme === "dark" ? "dark" : "light");
