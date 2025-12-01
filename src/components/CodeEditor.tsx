@@ -33,6 +33,9 @@ const normalizePackageName = (specifier: string) => {
   return specifier.split("/")[0];
 };
 
+
+
+
 export function CodeEditor() {
   const { code, updateCode } = useActiveCode();
   const { sandpack } = useSandpack();
@@ -45,7 +48,14 @@ export function CodeEditor() {
   // Force le thème Monaco
   useEffect(() => {
     if (monaco) {
-      monaco.editor.setTheme(resolvedTheme === "dark" ? "vs-dark" : "light");
+
+   fetch('/node_modules/monaco-themes/themes/Sunburst.json').then((data) => data.json())
+  .then((data) => {
+    monaco.editor.defineTheme('dark', data);
+      monaco.editor.setTheme(resolvedTheme === "dark" ? "dark" : "light");
+  });
+    
+    
     }
   }, [monaco, resolvedTheme]);
 
@@ -62,7 +72,7 @@ export function CodeEditor() {
     });
 
     const ata = setupTypeAcquisition({
-      projectName: "cipher-studio",
+      projectName: "frontstudio",
       typescript: ts,
       logger: console,
       delegate: {
@@ -77,7 +87,6 @@ export function CodeEditor() {
 
     ataRef.current = ata;
 
-    // Scan initial
     ata(`import React from 'react'; import ReactDOM from 'react-dom';`);
     const packageJson = sandpack.files["/package.json"]?.code;
     if (packageJson) {
@@ -95,7 +104,6 @@ export function CodeEditor() {
     ata(code);
   };
 
-  // --- LOGIQUE D'AUTO-INSTALLATION CORRIGÉE ---
   useEffect(() => {
     if (ataRef.current) {
       ataRef.current(code);
@@ -177,7 +185,6 @@ export function CodeEditor() {
     return "javascript";
   };
 
-  // --- FORMATAGE DU CODE ---
   const handleFormat = async () => {
     const currentFile = sandpack.activeFile;
     let parser = "babel";

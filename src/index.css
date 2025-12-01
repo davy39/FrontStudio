@@ -1,117 +1,199 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* 1. Définition du mode Dark via une variante personnalisée */
+@custom-variant dark (&:is(.dark *));
 
-@layer base {
-  :root {
-    /* Light theme - VS Code Light+ */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 13%;
+/* 2. Configuration du Thème (Remplace tailwind.config.js) */
+@theme {
+  /* Mappage des couleurs */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 13%;
+  /* Couleurs spécifiques IDE */
+  --color-editor-background: var(--editor-background);
+  --color-editor-foreground: var(--editor-foreground);
+  --color-sidebar-bg: var(--sidebar-bg);
+  --color-sidebar-hover: var(--sidebar-hover);
+  --color-sidebar-active: var(--sidebar-active);
+  --color-titlebar-bg: var(--titlebar-bg);
+  --color-panel-border: var(--panel-border);
+  --color-activity-bar: var(--activity-bar);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 13%;
+  /* Syntax Highlighting */
+  --color-syntax-keyword: var(--syntax-keyword);
+  --color-syntax-string: var(--syntax-string);
+  --color-syntax-number: var(--syntax-number);
+  --color-syntax-comment: var(--syntax-comment);
+  --color-syntax-function: var(--syntax-function);
 
-    --primary: 207 100% 40%;
-    --primary-foreground: 0 0% 100%;
+  /* Sidebar Shadcn */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 13%;
+  /* Border Radius */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+  /* Animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
 
-    --accent: 207 100% 95%;
-    --accent-foreground: 207 100% 40%;
-
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 207 100% 40%;
-
-    --radius: 0.25rem;
-
-    /* IDE specific colors */
-    --editor-background: 0 0% 100%;
-    --editor-foreground: 0 0% 13%;
-    --sidebar-bg: 0 0% 97%;
-    --sidebar-hover: 0 0% 93%;
-    --sidebar-active: 207 100% 95%;
-    --titlebar-bg: 0 0% 96%;
-    --panel-border: 0 0% 88%;
-    --activity-bar: 0 0% 95%;
-
-    /* Syntax highlighting (light) */
-    --syntax-keyword: 207 100% 40%;
-    --syntax-string: 120 73% 35%;
-    --syntax-number: 120 100% 25%;
-    --syntax-comment: 0 0% 60%;
-    --syntax-function: 280 65% 45%;
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
   }
-
-  .dark {
-    /* Dark theme - VS Code Dark+ */
-    --background: 0 0% 12%;
-    --foreground: 0 0% 84%;
-
-    --card: 0 0% 14%;
-    --card-foreground: 0 0% 84%;
-
-    --popover: 0 0% 14%;
-    --popover-foreground: 0 0% 84%;
-
-    --primary: 207 100% 50%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 0 0% 18%;
-    --secondary-foreground: 0 0% 84%;
-
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 60%;
-
-    --accent: 207 100% 15%;
-    --accent-foreground: 207 100% 50%;
-
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 207 100% 50%;
-
-    /* IDE specific colors */
-    --editor-background: 0 0% 12%;
-    --editor-foreground: 0 0% 84%;
-    --sidebar-bg: 0 0% 9%;
-    --sidebar-hover: 0 0% 15%;
-    --sidebar-active: 207 100% 15%;
-    --titlebar-bg: 0 0% 10%;
-    --panel-border: 0 0% 20%;
-    --activity-bar: 0 0% 8%;
-
-    /* Syntax highlighting (dark) */
-    --syntax-keyword: 207 100% 65%;
-    --syntax-string: 120 50% 60%;
-    --syntax-number: 120 100% 70%;
-    --syntax-comment: 0 0% 50%;
-    --syntax-function: 280 65% 70%;
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
   }
 }
 
+/* 3. Définition des valeurs des variables CSS */
+:root {
+  /* Base - Light theme */
+  --background: oklch(100% 0 0);
+  --foreground: oklch(13% 0 0);
+  --card: oklch(98% 0 0);
+  --card-foreground: oklch(13% 0 0);
+  --popover: oklch(100% 0 0);
+  --popover-foreground: oklch(13% 0 0);
+  --primary: oklch(40% 0.15 240);
+  --primary-foreground: oklch(100% 0 0);
+  --secondary: oklch(96% 0 0);
+  --secondary-foreground: oklch(13% 0 0);
+  --muted: oklch(96% 0 0);
+  --muted-foreground: oklch(45% 0 0);
+  --accent: oklch(95% 0.05 240);
+  --accent-foreground: oklch(40% 0.15 240);
+  --destructive: oklch(51% 0.2 25);
+  --destructive-foreground: oklch(100% 0 0);
+  --border: oklch(90% 0 0);
+  --input: oklch(90% 0 0);
+  --ring: oklch(40% 0.15 240);
+
+  /* IDE specific colors */
+  --editor-background: oklch(100% 0 0);
+  --editor-foreground: oklch(13% 0 0);
+  --sidebar-bg: oklch(97% 0 0);
+  --sidebar-hover: oklch(93% 0 0);
+  --sidebar-active: oklch(95% 0.05 240);
+  --titlebar-bg: oklch(96% 0 0);
+  --panel-border: oklch(88% 0 0);
+  --activity-bar: oklch(95% 0 0);
+
+  /* Syntax highlighting */
+  --syntax-keyword: oklch(40% 0.15 240);
+  --syntax-string: oklch(35% 0.15 140);
+  --syntax-number: oklch(25% 0.2 140);
+  --syntax-comment: oklch(60% 0 0);
+  --syntax-function: oklch(45% 0.15 300);
+
+  /* Sidebar */
+  --sidebar: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(240 5.3% 26.1%);
+  --sidebar-primary: hsl(240 5.9% 10%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(240 4.8% 95.9%);
+  --sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --sidebar-border: hsl(220 13% 91%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  /* Base - Dark theme */
+  --background: oklch(12% 0 0);
+  --foreground: oklch(84% 0 0);
+  --card: oklch(14% 0 0);
+  --card-foreground: oklch(84% 0 0);
+  --popover: oklch(14% 0 0);
+  --popover-foreground: oklch(84% 0 0);
+  --primary: oklch(50% 0.15 240);
+  --primary-foreground: oklch(100% 0 0);
+  --secondary: oklch(18% 0 0);
+  --secondary-foreground: oklch(84% 0 0);
+  --muted: oklch(18% 0 0);
+  --muted-foreground: oklch(60% 0 0);
+  --accent: oklch(15% 0.05 240);
+  --accent-foreground: oklch(50% 0.15 240);
+  --destructive: oklch(51% 0.2 25);
+  --destructive-foreground: oklch(100% 0 0);
+  --border: oklch(20% 0 0);
+  --input: oklch(20% 0 0);
+  --ring: oklch(50% 0.15 240);
+
+  /* IDE specific colors */
+  --editor-background: oklch(12% 0 0);
+  --editor-foreground: oklch(84% 0 0);
+  --sidebar-bg: oklch(9% 0 0);
+  --sidebar-hover: oklch(15% 0 0);
+  --sidebar-active: oklch(15% 0.05 240);
+  --titlebar-bg: oklch(10% 0 0);
+  --panel-border: oklch(20% 0 0);
+  --activity-bar: oklch(8% 0 0);
+
+  /* Syntax highlighting */
+  --syntax-keyword: oklch(65% 0.15 240);
+  --syntax-string: oklch(60% 0.12 140);
+  --syntax-number: oklch(70% 0.2 140);
+  --syntax-comment: oklch(50% 0 0);
+  --syntax-function: oklch(70% 0.15 300);
+
+  /* Sidebar */
+  --sidebar: hsl(240 5.9% 10%);
+  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-primary: hsl(224.3 76.3% 48%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+/* 4. Styles de base globaux */
 @layer base {
-  * {
-    @apply border-border;
+  *,
+  ::after,
+  ::before {
+    border-color: var(--border);
+    outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
   }
 }
