@@ -1,11 +1,11 @@
 # ⚡ FrontStudio
-[![alt text](https://img.shields.io/badge/demo-online-2ea44f.svg?style=for-the-badge&logo=github&logoColor=white)](https://davy39.github.io/FrontStudio)
-[![License](https://img.shields.io/badge/license-%20%20GNU%20GPLv3%20-green?style=for-the-badge&logo=gnu)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?logo=typescript&logoColor=white&style=for-the-badge)](https://www.typescriptlang.org)
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-7.0+-646CFF?logo=vite&logoColor=white&style=for-the-badge)](https://vitejs.dev)
-[![Tailwind](https://img.shields.io/badge/Tailwind-4.0+-38B2AC?logo=tailwind-css&logoColor=white&style=for-the-badge)](https://tailwindcss.com/)
-[![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-3.0+-000?logo=shadcnui&logoColor=fff&style=for-the-badge)](https://ui.shadcn.com/)
+[![alt text](https://img.shields.io/badge/demo_online-2ea44f.svg?style=for-the-badge&logo=github&logoColor=white)](https://davy39.github.io/FrontStudio)
+[![License](https://img.shields.io/badge/license_%20%20GNU%20GPLv3%20-green?style=for-the-badge&logo=gnu)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+[![TypeScript](https://img.shields.io/badge/TypeScript_5.0+-3178C6?logo=typescript&logoColor=white&style=for-the-badge)](https://www.typescriptlang.org)
+[![React](https://img.shields.io/badge/React_19-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite_7.0+-646CFF?logo=vite&logoColor=white&style=for-the-badge)](https://vitejs.dev)
+[![Tailwind](https://img.shields.io/badge/Tailwind_4.0+-38B2AC?logo=tailwind-css&logoColor=white&style=for-the-badge)](https://tailwindcss.com/)
+[![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui_3.0+-000?logo=shadcnui&logoColor=fff&style=for-the-badge)](https://ui.shadcn.com/)
 
 **FrontStudio** is a sophisticated, browser-based Integrated Development Environment (IDE) tailored for React development. It offers a VS Code-like experience directly in the browser, allowing developers to write, preview, manage dependencies, and share React projects instantly without any local setup.
 
