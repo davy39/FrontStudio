@@ -20,17 +20,17 @@ Built on top of the powerful **Sandpack** ecosystem, FrontStudio provides a full
     *   Syntax highlighting, line numbers, and minimap.
     *   **IntelliSense & Type Acquisition:** Automatic downloading of TypeScript types (`@types/pkg`) for imported libraries.
     *   **Prettier Integration:** Auto-format code with a click.
-*   **wm File Explorer:**
+*   **📂 File Explorer:**
     *   Create, rename, delete, and move files and folders.
     *   Drag-and-drop support for organizing project structure.
     *   Context menus for quick actions.
-*   **Mk Live Preview:**
+*   **🖥️ Live Preview:**
     *   Instant feedback with a hot-reloading preview panel.
     *   Error overlays and status indicators.
 *   **📦 Dependency Manager:**
     *   visual interface to add/remove NPM packages via `package.json`.
     *   **Auto-Install:** Detects new `import` statements in your code and automatically adds them to dependencies.
-*   **wn Console & Debugging:**
+*   **🛠️ Console & Debugging:**
     *   Integrated console to view logs, warnings, and errors from the preview environment.
 *   **🔗 Sharing & Persistence:**
     *   **Share via URL:** Compresses the entire project state into a shareable URL hash.
